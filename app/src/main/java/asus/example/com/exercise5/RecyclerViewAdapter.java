@@ -22,8 +22,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
     private OnItemClickListener<Film> onItemClickListener;
 
     RecyclerViewAdapter(List<Film> films, Context context){
-        inflater = LayoutInflater.from(context);
         this.films = films;
+        inflater = LayoutInflater.from(context);
     }
 
     @NonNull
@@ -37,6 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
                 fireItemClicked(position, films.get(position));
             }
         });
+        Log.i(getClass().getSimpleName(), "ViewHolder "+i+" created");
         return viewHolder;
     }
 
@@ -55,6 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
         Film film = films.get(i);
         Log.i(getClass().getSimpleName(), "Uri: "+film.getAvatar()+" films size = "+films.size());
         Picasso.get().load(Uri.parse(film.getAvatar())).into(viewHolder.poster);
+        viewHolder.name.setText(film.getTitle());
     }
 
 
