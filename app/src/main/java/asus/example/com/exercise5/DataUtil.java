@@ -22,11 +22,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DataUtil extends AsyncTask<Void, Void, List<Film>> {
 
     public APIService api = new NetworkModule().apiService;
-    private static List <Film> films = new ArrayList<>();
+    private String url;
+
+    DataUtil(String url){
+        this.url = url;
+    }
 
     @Override
     protected List<Film> doInBackground(Void... voids) {
-
+        List<Film> films = new ArrayList<>();
         String BaseUrl = "http://www.omdbapi.com/";
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create());
@@ -43,7 +47,7 @@ public class DataUtil extends AsyncTask<Void, Void, List<Film>> {
         });
         Retrofit retrofit = builder.build();
         APIService apiService  = retrofit.create(APIService.class);
-        final Call<FilmsList> filmsCall = apiService.getFilms();
+        final Call<FilmsList> filmsCall = apiService.getFilms(url);
         try {
             Response<FilmsList> result = filmsCall.execute();
             for (int i = 0; i<Objects.requireNonNull(result.body()).films.size();i++){
@@ -53,7 +57,7 @@ public class DataUtil extends AsyncTask<Void, Void, List<Film>> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.i("DataUtil", "size = "+films.size());
+        Log.i("DataUtil", "size = "+ films.size());
         return films;
     }
 
