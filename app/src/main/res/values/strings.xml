@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Exercise5</string>
     <string name="search">Search</string>
+    <string name="year">Year:</string>
+    <string name="runtime">Runtime:</string>
+    <string name="director">Director:</string>
+    <string name="actors">Actors:</string>
+    <string name="plot">Plot:</string>
+    <string name="language">Language:</string>
+    <string name="country">Country:</string>
+    <string name="imdb_rating">IMDB rating:</string>
 </resources>
