@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +36,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
                 fireItemClicked(position, films.get(position));
             }
         });
-        Log.i(getClass().getSimpleName(), "ViewHolder "+i+" created");
         return viewHolder;
     }
 
@@ -54,7 +52,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Film film = films.get(i);
-        Log.i(getClass().getSimpleName(), "Uri: "+film.getAvatar()+" films size = "+films.size());
         Picasso.get().load(Uri.parse(film.getAvatar())).into(viewHolder.poster);
         viewHolder.name.setText(film.getTitle());
     }

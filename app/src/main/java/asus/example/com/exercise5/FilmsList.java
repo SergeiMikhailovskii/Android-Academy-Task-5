@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class FilmsList {
+class FilmsList {
     @SerializedName("Search")
     ArrayList<Film> films;
 

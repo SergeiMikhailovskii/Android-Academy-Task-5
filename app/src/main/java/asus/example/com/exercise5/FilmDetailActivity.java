@@ -19,7 +19,7 @@ public class FilmDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_detail);
 
-        String title = getIntent().getStringExtra("FILM_NAME");
+        String title = getIntent().getStringExtra(Constants.FILM_PUT_EXTRA);
 
         ImageView avatarImageView = findViewById(R.id.avatar_imageview);
         TextView actorsTextView = findViewById(R.id.actors_textview);

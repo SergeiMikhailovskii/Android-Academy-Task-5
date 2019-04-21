@@ -1,7 +1,6 @@
 package asus.example.com.exercise5;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 
 
@@ -30,13 +29,12 @@ public class DataUtil extends AsyncTask<Void, Void, List<Film>> {
     @Override
     protected List<Film> doInBackground(Void... voids) {
         List<Film> films = new ArrayList<>();
-        String BaseUrl = "http://www.omdbapi.com/";
-        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(BaseUrl)
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create());
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS);
+                .connectTimeout(Constants.CONNECT_AND_WRITE_TIMEOUT, TimeUnit.SECONDS)
+                .writeTimeout(Constants.CONNECT_AND_WRITE_TIMEOUT, TimeUnit.SECONDS)
+                .readTimeout(Constants.READ_TIMEOUT, TimeUnit.SECONDS);
         httpClient.addInterceptor(chain -> {
             Request original =  chain.request();
             Request.Builder requestBuilder = original.newBuilder()
@@ -52,11 +50,9 @@ public class DataUtil extends AsyncTask<Void, Void, List<Film>> {
             for (int i = 0; i<Objects.requireNonNull(result.body()).films.size();i++){
                 films.add(result.body().films.get(i));
             }
-            Log.i("DataUtil", "Body added");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.i("DataUtil", "size = "+ films.size());
         return films;
     }
 

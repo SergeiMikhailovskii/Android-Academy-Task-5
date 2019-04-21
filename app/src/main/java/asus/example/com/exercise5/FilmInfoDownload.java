@@ -22,13 +22,12 @@ public class FilmInfoDownload extends AsyncTask<Void, Void, Film> {
 
     @Override
     protected Film doInBackground(Void... voids) {
-        String BaseUrl = "http://www.omdbapi.com/";
-        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(BaseUrl)
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create());
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS);
+                .connectTimeout(Constants.CONNECT_AND_WRITE_TIMEOUT, TimeUnit.SECONDS)
+                .writeTimeout(Constants.CONNECT_AND_WRITE_TIMEOUT, TimeUnit.SECONDS)
+                .readTimeout(Constants.READ_TIMEOUT, TimeUnit.SECONDS);
         httpClient.addInterceptor(chain -> {
             Request original =  chain.request();
             Request.Builder requestBuilder = original.newBuilder()
@@ -38,7 +37,7 @@ public class FilmInfoDownload extends AsyncTask<Void, Void, Film> {
         });
         Retrofit retrofit = builder.build();
         APIService apiService  = retrofit.create(APIService.class);
-        final Call<Film> filmInfoCall = apiService.getFilmInfo("?apikey=956febbc&t="+title);
+        final Call<Film> filmInfoCall = apiService.getFilmInfo("?"+Constants.KEY+"&t="+title);
         Film film = null;
         try {
             Response<Film> response = filmInfoCall.execute();

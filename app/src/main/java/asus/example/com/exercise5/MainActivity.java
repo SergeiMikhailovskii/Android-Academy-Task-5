@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     private View.OnClickListener searchListener = v -> {
         list.setAdapter(null);
-        String url = "?apikey=956febbc&t="+searchEdit.getText().toString()+"&page=1&s="+searchEdit.getText().toString();
+        String url = "?"+Constants.KEY+"&t="+searchEdit.getText().toString()+"&page=1&s="+searchEdit.getText().toString();
         DataUtil dataUtil = new DataUtil(url);
-        list.setLayoutManager(new GridLayoutManager(this, 2));
+        list.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.rows)));
         try {
             films = dataUtil.execute().get();
         } catch (ExecutionException | InterruptedException e) {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onListClick(int position, Film item){
         Intent intent = new Intent(this, FilmDetailActivity.class);
-        intent.putExtra("FILM_NAME", films.get(position).getTitle());
+        intent.putExtra(Constants.FILM_PUT_EXTRA, films.get(position).getTitle());
         startActivity(intent);
 
     }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="poster_preview_width">180dp</dimen>
+    <dimen name="poster_preview_height">250dp</dimen>
+    <dimen name="half_of_usual_dimen">8dp</dimen>
+    <dimen name="usual_dimen">16dp</dimen>
+    <dimen name="zero_dimen">0dp</dimen>
+
+</resources>

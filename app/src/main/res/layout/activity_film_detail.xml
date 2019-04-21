@@ -8,111 +8,131 @@
 
     <ImageView
         android:id="@+id/avatar_imageview"
-        android:layout_width="150dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/poster_preview_width"
+        android:layout_height="@dimen/poster_preview_height"
+        android:layout_marginStart="@dimen/half_of_usual_dimen"
+        android:layout_marginTop="@dimen/half_of_usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/title_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/half_of_usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/year_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/year"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toBottomOf="@id/title_textview"/>
+        app:layout_constraintTop_toBottomOf="@id/title_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/runtime_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/runtime"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toBottomOf="@id/year_textview"/>
+        app:layout_constraintTop_toBottomOf="@id/year_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/director_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/director"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toBottomOf="@id/runtime_textview"/>
+        app:layout_constraintTop_toBottomOf="@id/runtime_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/actors_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/actors"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toBottomOf="@id/director_textview"/>
+        app:layout_constraintTop_toBottomOf="@id/director_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/plot_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/plot"
         app:layout_constraintStart_toEndOf="@id/avatar_imageview"
-        app:layout_constraintTop_toBottomOf="@id/actors_textview" />
+        app:layout_constraintTop_toBottomOf="@id/actors_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/language_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/language"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/plot_textview" />
+        app:layout_constraintTop_toBottomOf="@id/plot_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/country_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/country"
+        android:maxLines="4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/language_textview" />
+        app:layout_constraintTop_toBottomOf="@id/language_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
     <TextView
         android:id="@+id/imdb_rating_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_dimen"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/usual_dimen"
+        android:layout_marginStart="@dimen/usual_dimen"
+        android:layout_marginEnd="@dimen/usual_dimen"
         android:text="@string/imdb_rating"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/country_textview"/>
+        app:layout_constraintTop_toBottomOf="@id/country_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
 
 </android.support.constraint.ConstraintLayout>
